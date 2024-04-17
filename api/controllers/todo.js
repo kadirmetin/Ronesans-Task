@@ -49,8 +49,6 @@ const create = async (req, res) => {
   try {
     const { user_id, text, time } = req.body;
 
-    console.log(user_id);
-
     if ((!user_id, !text, !time)) {
       return res.status(400).json({ message: "Please fill out all fields!" });
     }

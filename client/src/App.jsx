@@ -1,9 +1,12 @@
-import "./App.css";
+import { AuthContextProvider } from "./context/AuthContext";
+import RoutesList from "./routes";
 
 const App = () => {
   return (
     <>
-      <h1>Hello World!</h1>
+      <AuthContextProvider>
+        <RoutesList />
+      </AuthContextProvider>
     </>
   );
 };
