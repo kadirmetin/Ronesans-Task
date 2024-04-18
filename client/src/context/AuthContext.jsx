@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
@@ -17,6 +18,12 @@ export const AuthContextProvider = ({ children }) => {
 
   const updateToken = (token) => {
     setToken(token);
+
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    } else {
+      delete axios.defaults.headers.common["Authorization"];
+    }
   };
 
   useEffect(() => {

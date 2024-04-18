@@ -4,5 +4,17 @@
   background-color: gainsboro;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   padding: 5px;
+
+  .username {
+    color: #1f8ef1;
+  }
+
+  img {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
 }

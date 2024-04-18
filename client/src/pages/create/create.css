@@ -1,0 +1,64 @@
+.create {
+  width: 400px;
+  height: auto;
+
+  button {
+    width: auto;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #1f8ef1;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .item {
+    background-color: gainsboro;
+    gap: 100px;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+
+      input {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+
+      .errorArea {
+        background-color: #ffcccc;
+        padding: 5px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+
+        span {
+          color: red;
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        background-color: #1f8ef1;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
+}

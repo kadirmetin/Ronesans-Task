@@ -1,0 +1,43 @@
+.todo {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .text {
+      font-weight: 600;
+    }
+
+    .checked {
+      text-decoration: line-through;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    img {
+      height: 32px;
+      width: 32px;
+      object-fit: cover;
+      background-color: gainsboro;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}

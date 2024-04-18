@@ -19,7 +19,7 @@ router.post("/login", login);
 //TODO
 
 router.get("/todo/getAll", verifyToken, getAll);
-router.get("/todo/getOne/:id", verifyToken, getOne);
+router.get("/todo/getOne/:todo_id", verifyToken, getOne);
 router.post("/todo/create", verifyToken, create);
 router.delete("/todo/delete/:todo_id", verifyToken, deleteTodo);
 router.put("/todo/update/:todo_id", verifyToken, update);

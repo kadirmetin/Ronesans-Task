@@ -73,6 +73,8 @@ const create = async (req, res) => {
 
 const deleteTodo = async (req, res) => {
   try {
+    console.log("PARAMS: ", req.params);
+
     const { todo_id } = req.params;
 
     if (!todo_id) {
@@ -103,11 +105,16 @@ const deleteTodo = async (req, res) => {
 const update = async (req, res) => {
   try {
     const { todo_id } = req.params;
-    const { text, time } = req.body;
+    const { text, time, checked } = req.body;
 
-    if (!todo_id || !text || !time) {
-      return res.status(400).json({ message: "Please fill out all fields!" });
+    if (!todo_id || (!text && !time && checked === undefined)) {
+      return res
+        .status(400)
+        .json({ message: "Please provide at least one field to update." });
     }
+
+    console.log("ID: ", todo_id);
+    console.log("PROPS: ", text, time, checked);
 
     const todo = await Todo.findByPk(todo_id);
 
@@ -115,14 +122,21 @@ const update = async (req, res) => {
       return res.status(404).json({ message: "Todo not found." });
     }
 
-    todo.text = text;
-    todo.time = time;
+    if (text !== undefined) {
+      todo.text = text;
+    }
+    if (time !== undefined) {
+      todo.time = time;
+    }
+    if (checked !== undefined) {
+      todo.checked = checked;
+    }
+
     await todo.save();
 
     return res.status(200).json({ message: "Todo updated successfully." });
   } catch (error) {
     console.error(error);
-
     return res
       .status(500)
       .json({ message: "An error occurred while updating the todo." });

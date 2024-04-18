@@ -27,7 +27,6 @@ const Login = () => {
       });
 
       if (res.status === 200) {
-        console.log(res.data.user);
         updateUser(res.data.user);
         updateToken(res.data.token);
 
